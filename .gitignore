@@ -1,3 +1,6 @@
 # Remove virtualenv
 .venv
 .secrets.toml
+pamps/__pycache__/
+pamps/models/__pycache__/
+pamps/routers/__pycache__
