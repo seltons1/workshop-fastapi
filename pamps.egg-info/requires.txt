@@ -19,9 +19,11 @@ psycopg2-binary==2.9.5
 pyasn1==0.4.8
 pycparser==2.21
 pydantic==1.10.2
+pydentic==0.0.1.dev3
 pygments==2.13.0
 python-jose[cryptography]==3.3.0
 python-multipart==0.0.5
+python-stdnum==1.18
 rich==12.6.0
 rsa==4.9
 six==1.16.0
