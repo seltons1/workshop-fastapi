@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from .routes import main_router
 
 app = FastAPI(
     title="Pamps",
@@ -6,6 +7,5 @@ app = FastAPI(
     description="Pamps is a posting app",
 )
 
-@app.get("/")
-async def index():
-    return {"hello": "world"}
+
+app.include_router(main_router)
