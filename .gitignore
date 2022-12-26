@@ -1,2 +1,3 @@
 # Remove virtualenv
 .venv
+.secrets.toml
