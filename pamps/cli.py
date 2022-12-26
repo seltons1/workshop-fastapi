@@ -30,11 +30,22 @@ def shell():
 def user_list():
     """Lists all users"""
     table = Table(title="Pamps users")
-    fields = ["username", "email"]
+    fields = ["username", "email", "password"]
     for header in fields:
         table.add_column(header, style="magenta")
     with Session(engine) as session:
         users = session.exec(select(User))
         for user in users:
-            table.add_row(user.username, user.email)
+            table.add_row(user.username, user.email, user.password)
     Console().print(table)
+
+@main.command()
+def create_user(email: str, username: str, password: str):
+    """Create user"""
+    with Session(engine) as session:
+        user = User(email=email, username=username, password=password)
+        session.add(user)
+        session.commit()
+        session.refresh(user)
+        typer.echo(f"created {username} user")
+        return user
