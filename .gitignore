@@ -1,6 +1,7 @@
-# Remove virtualenv
 .venv
+*.egg-info
+__pycache__
+**/__pycache__
+**/**/__pycache__
+**/**/**/__pycache__
 .secrets.toml
-pamps/__pycache__/
-pamps/models/__pycache__/
-pamps/routers/__pycache__
